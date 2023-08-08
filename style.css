@@ -1,0 +1,71 @@
+.container {
+  background: blue;
+  width: 80vw;
+
+  /* width will fall back to the value of viewport */
+  height: 80vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.parent {
+  background: black;
+  color: white;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: sam 2s infinite alternate-reverse;
+}
+h2 {
+  animation: sam 4s infinite linear;
+}
+.ball {
+  background: radial-gradient(white, red);
+  /* radial gradient goes from the center to outwards */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  /* how to take the ball out of the document flow???? */
+  position: absolute;
+  top: 25px;
+  left: 50px;
+  animation: circle 3s infinite;
+}
+/* how to take the ball out of the document flow???? */
+@keyframes circle {
+  0% {
+    background: radial-gradient(white, red);
+    top: 25px;
+    left: 50px;
+  }
+  25% {
+    top: 25px;
+    left: 65vw;
+  }
+  50% {
+    top: 65vh;
+    left: 65vw;
+  }
+  75% {
+    top: 65vh;
+    left: 100px;
+  }
+  100% {
+    background: radial-gradient(white, yellow);
+    top: 25px;
+    left: 100px;
+  }
+}
+@keyframes sam {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
